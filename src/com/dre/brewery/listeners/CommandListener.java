@@ -651,6 +651,11 @@ public class CommandListener implements CommandExecutor {
 			}
 
 			ItemStack item = brewForPlayer.a().createItem(null);
+
+			if (args[0].equalsIgnoreCase("give")) {
+				brewForPlayer.a().seal(item);
+			}
+
 			if (item != null) {
 				brewForPlayer.b().getInventory().addItem(item);
 				p.msg(sender, p.languageReader.get("CMD_Created"));
